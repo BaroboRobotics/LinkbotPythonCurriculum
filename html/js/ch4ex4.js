@@ -42,8 +42,6 @@ $('input.j3text', thisExercise).keyup( function() {
   j3text = $(this).val();
 });
 
-var nextRotateAngle = 180;
-
 $('.expand-program', thisExercise).click(function (event) {
     // Suppress addition of this navigation event to the browser's history, so
     // the Back button isn't screwed up.
@@ -52,8 +50,7 @@ $('.expand-program', thisExercise).click(function (event) {
     $('pre.hidden', thisExercise).slideToggle();
 
     // Flip the hider tab image
-    $('img', this).css('transform', 'rotate(' + nextRotateAngle + 'deg)');
-    nextRotateAngle = (nextRotateAngle + 180) % 360;
+    $('img', this).replaceWith(imageToggle());
 });
 
 });
