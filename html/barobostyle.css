@@ -123,3 +123,6 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+.hider-tab img {
+    width: 40px;
+}
