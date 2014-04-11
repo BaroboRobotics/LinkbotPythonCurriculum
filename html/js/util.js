@@ -36,3 +36,13 @@ $( function() {
       $('#navIcon').attr('style', baseStyle+'top:' + top + 'px;');
     });
 });
+
+var imageToggle = (function() {
+  var images = [$("<img src='images/double-chevron-down.svg'></img>")
+               ,$("<img src='images/double-chevron-up.svg'></img>")
+               ];
+  var currentIdx = 0;
+  return function () {
+    return images[(++currentIdx) % 2];
+  };
+}());
