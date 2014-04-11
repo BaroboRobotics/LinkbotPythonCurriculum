@@ -30,12 +30,10 @@ $('.stop', thisExercise).click( function(obj) {
 });
 
 $('input.j1text', thisExercise).keyup( function() {
-  $('input.j1text', thisExercise).val( $(this).val() );
   j1text = $(this).val();
 });
 
 $('input.j3text', thisExercise).keyup( function() {
-  $('input.j3text', thisExercise).val( $(this).val() );
   j3text = $(this).val();
 });
 
