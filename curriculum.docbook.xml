@@ -6,6 +6,7 @@
 ]>
 <book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns = "http://docbook.org/ns/docbook">
+<?dbhtml-include href="html/addGetParams.html"?>
 <info>
   <title>Programming the Barobo Linkbot with Python</title>
   <author>

@@ -1,0 +1,12 @@
+<script>
+$(function () {
+  var robotId = GetRobotId();
+  if (typeof robotId !== "undefined") {
+    $('a[href]').each(function(index, element) {
+      var href = $(this).attr('href').split('?')[0];
+      href = href + "?robotID="+robotId;
+      $(this).attr('href', href);
+    });
+  }
+});
+</script>
