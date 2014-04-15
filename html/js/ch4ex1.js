@@ -8,9 +8,9 @@ if(robotID == undefined) {
 }
 else {
   $('.unknown-robot-id-comment', thisExercise).text('');
+  AddRobotToGetParams(robotID);
 }
 
-AddRobotToGetParams(robotID);
 $('.robotID', thisExercise).text(robotID);
 
 $('.tryNow', thisExercise).click( function(obj) {

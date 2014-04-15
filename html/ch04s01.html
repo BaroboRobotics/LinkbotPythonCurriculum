@@ -23,7 +23,9 @@ on the Linkbot and is four characters long.
 
 <script>
 
+/* ZORGERD, THIS IS BROKEN! See improvements in ch03s01.html. */
 $('#setRobotID').click( function(obj) {
+    alert("Grep code for this comment: ZORGERD");
     var linkbotId =  $('.ch4intro').find('.linkbotId').val(); 
 		try {
 			var bot = Linkbots.connect(linkbotId);
