@@ -6,9 +6,9 @@
 import barobo
 import time
 
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-linkbot = ctx.getLinkbot()
+dongle = barobo.Dongle()
+dongle.connect()
+linkbot = dongle.getLinkbot()
 
 for i in range(5):
     print(i)

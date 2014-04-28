@@ -5,9 +5,9 @@
 
 import barobo
 
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-linkbot = ctx.getLinkbot()
+dongle = barobo.Dongle()
+dongle.connect()
+linkbot = dongle.getLinkbot()
 
 # Move all joints by 90 degrees in the positive direction
 linkbot.move(90, 90, 90)

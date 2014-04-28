@@ -3,6 +3,7 @@
 <!ENTITY LinkbotI "Linkbot&#x2011;I">
 <!ENTITY LinkbotL "Linkbot&#x2011;L">
 <!ENTITY ch3ex1 SYSTEM "code/ch3ex1.py">
+<!ENTITY ch4simple SYSTEM "code/ch4simple.py">
 ]>
 <book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns = "http://docbook.org/ns/docbook">
@@ -112,7 +113,7 @@
       loops, etc. 
     </para>
   -->
-  <section> <title> Getting and Installing the Software </title>
+  <section id="section:install"> <title> Getting and Installing the Software </title>
     <para>
       This curriculum requires a fully functioning Python environment
       and a copy of Linkbot Labs. It is very likely you are already viewing
@@ -618,6 +619,18 @@
       </orderedlist>
     </section>
   </section>
+
+  <section>
+    <title> Moving a Robot's Motors to Absolute Positions </title>
+    <para>
+      The previous section showed you how to move the robot around by
+      specifying how far you want each motor to move from their current
+      positions. But what if you want teh robot to move its motors
+      to an absolute position? This section will show you how to move
+      a robot's motors to absolute positions.
+    </para>
+  </section>
+
   <!--
   <section> <title>Introduction to Python for Computer Programming</title>
     <para>
@@ -709,7 +722,8 @@
       </para>
       <section> <title>Dissecting Your First Python Program</title>
         <para>
-          Lets take a closer look at your first Python program. The first line
+          Lets take a closer look at your first Python program. 
+          The first line
           looks like this:
           <programlisting> #!/usr/bin/env python </programlisting>
           This line tells the computer that the program is a Python program.
@@ -845,6 +859,250 @@ print(myvar)
   </section>
   -->
 
+</chapter>
+<chapter>
+  <title> An Introduction to the Python Interpreter </title>
+  <para>
+    So far, up to this point, you have been relying on BaroboBrowser to run
+    code snippet examples for you. Now it's time to graduate you to writing your
+    own complete Python programs that can run on any computer.<footnote><para>With the
+    correct pre-requisites installed, of course... </para></footnote> When you write
+    Python programs, they should be saved as a "plain-text" file. This is the
+    same format that Microsoft Notepad and other text editors use to save
+    text files. The reason these files are called "plain-text" is because they
+    are unable to store information about fonts, font sizes, page sizes, and
+    other details that other formats, such as Microsoft Word, can store. 
+  </para>
+  <para>
+    When you execute a Python program stored in a plain-text file, the Python
+    interpreter scans the file, line by line, and executes the instructions
+    written in the file. To familiarize you with this process, lets begin
+    by playing with the Python interpreter.
+  </para>
+  <section> <title> Starting an Interactive Python Interpreter </title>
+    The first step is starting an interactive Python interpreter. First,
+    navigate to where you installed the Python software, as detailed
+    in <xref linkend="section:install"/>. Open the folder, and you should
+    see something like this:
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/portable_python_files.png"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+    Double-click on the icon labeled "IPython-Portable" to start a Python terminal. You
+    should see the following screen pop up:
+    </para>
+    <para>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/iPython_terminal.png"/>
+        </imageobject>
+      </mediaobject>
+    </para>
+    <para>
+      This is your Python terminal. The Python terminal is just like the Python
+      interpreter, except you can type in one line of code at a time and it executes
+      each line of code as you type it in. 
+    </para>
+  </section>
+  <section>
+    <title> Python Variables </title>
+    <para>
+      Variables are elements in a computer language that are used to store and
+      manipulate data. In most languages, variables can be used to store numbers,
+      text strings, and other types of complex data. In Python, to create 
+      <footnote><para> In Programmer-speak, creating variables is often called "Declaring" variables.</para></footnote>
+      variables, you simply come up with a name for your variable and give it a value. 
+      Variable names can be just about anything but they have to start with a letter or the
+      underscore "_" character, and they can't same some special symbols in the name,
+      such as plus signs or minus signs. Otherwise, they can contain letters, numbers, 
+      underscores. There is also a list of so-called "reserved keywords" that you 
+      cannot use as variable names because they have special meaning to the Python interpreter.
+      The reserved keywords are:
+      <screen>
+and      assert   break    class    continue def      del      elif   
+else     except   exec     finally  for      from     global   if 
+import   in       is       lambda   not      or       pass     print 
+raise    return   try      while    yield </screen>
+    </para>
+    <para>
+      Without further ado, lets try creating a variable. Type the text "myVar = 5" into
+      your interpreter terminal and press "Enter". Your terminal should now look like this:
+      <screen>
+In [1]: myVar = 5
+
+In [2]:
+      </screen>
+      Now type "myOtherVar = 3":
+      <screen>
+In [2]: myOtherVar = 3
+
+In [3]:
+      </screen>
+      Now try "myLastVar = myVar + myOtherVar":
+      <screen>
+In [3]: myLastVar = myVar + myOtherVar
+
+In [4]:
+      </screen>
+      And finally, "print(myLastVar)":
+      <screen>
+In [4]: print(myLastVar)
+8
+
+In [5]:
+  </screen>
+    </para>
+    <para>
+      What happened here? Here's what you just did:
+      <itemizedlist>
+        <listitem> First, you created a variable called <code>myVar</code> and gave it the value "5". </listitem>
+        <listitem> Next, you created a variable <code>myOtherVar</code> and gave it the value "3". </listitem>
+        <listitem> Then, you created a variable called <code>myLastVar</code>. Its value is the result of the
+        calculation <code>myVar + myOtherVar</code> </listitem>
+        <listitem> Finally, with the <function>print()</function> function, you printed the value of
+        <code>myLastVar</code>, which is 8. </listitem>
+      </itemizedlist>
+    </para>
+    <para>
+      As you can see, you can use variables to store numbers and also to calculate values.
+      Now, lets try another slightly more interesting example:
+      <screen>
+In [1]: x = 5
+
+In [2]: x = x + 3
+
+In [3]: print(x)
+8
+
+In [4]: </screen>
+      Check out line 2. If you've taken Algebra, this line might look very weird to you.
+      With code and calculations like this, it is much better to think 
+      of the equal sign as an assignment operator rather than equality, which you may be
+      used to from math. In other words, Python interprets this line as "Calculate the value
+      of <code>x + 3</code>. Take the result and assign it to the variable <code>x</code>".
+    </para>
+  </section>
+  <section>
+    <title>Using the Python Interpreter as a Calculator</title>
+    <para>
+      Python supports all of the math operations you might be used to on your calculator,
+      although some of the symbols they use might be different than what you are used
+      to on pencil and paper. Here are some common math operations you can use in
+      Python:
+      <itemizedlist>
+        <listitem> <code>+</code> : Addition </listitem>
+        <listitem> <code>-</code> : Subtraction </listitem>
+        <listitem> <code>*</code> : Multiplication </listitem>
+        <listitem> <code>/</code> : Division </listitem>
+        <listitem> <code>**</code> : Exponent e.g. <code>5**2</code> is "five squared"</listitem>
+        <listitem> <code>( ... )</code> : Precedence. e.g. <code> (4+3)*2 </code> </listitem>
+      </itemizedlist>
+      Note that you can just type the calculation right on the interpreter terminal and it will
+      automatically show you the result.
+      <screen>
+In [4]: ((5+4)*4)**3
+Out[4]: 46656
+
+In [5]:
+      </screen>
+      Note that this is a special feature of the Python interpreter. When you start writing
+      Python programs in files, you will either need to store the result in a variable or 
+      print it out with the <function>print()</function> function.
+    </para>
+  </section>
+  <section>
+    <title>Moving your Linkbot with the Python Interpreter</title>
+    <para>
+      Now, lets try moving the Linkbot using the interactive Python interpreter.
+      Type the following so that your terminal looks like the following screen.
+      If you mistype a line, don't worry; just type it again.
+      <screen> </screen>
+
+    </para>
+  </section>
+
+  <section>
+    <title> So, what about that Boilerplate Code? </title>
+    <para>
+      We mentioned at the beginning of last section that we were only
+      going to show you some abbreviated pieces of code to keep clear 
+      the functions that were important for moving motors. If you 
+      were curious, you may have expanded the code examples and looked
+      at the whole unabridged Python code. What you saw was probably 
+      something like this:
+    </para>
+    <programlisting> &ch4simple; </programlisting>
+    <para> 
+      Lets take a closer look at this code, one line at a time.
+    </para>
+    <para>
+      The first line
+      looks like this:
+      <programlisting> #!/usr/bin/env python </programlisting>
+      This line tells the computer that the program is a Python program.
+      You should remember to put this line at the top of all of your 
+      Python programs.  Many different languages have some sort
+      of boilerplate code; some more complex than others. The next two lines
+      look like this:
+      <programlisting>
+# File: ch4simple.py
+# A simple and complete Python program that moves the motors on a Linkbot
+      </programlisting>
+      Note that both this code and the first line of code begin with the '#'
+      character. In programmer-speak, this character is usually referred to
+      as a "pound-sign" or a "hash" character. This character has
+      special meaning in Python. It tells the Python interpreter to ignore
+      anything else that comes after it in the line. This is known as a 
+      <emphasis> comment </emphasis>. Comments are text that are meant tell
+      a human reader some information but are ignored by the computer as the
+      computer executes the program.
+    </para> <para>
+      Next, we see
+      <programlisting>
+import barobo
+      </programlisting>
+      This line tells Python to import a package. Python packages are code
+      libraries written by people to perform tasks that are not part of Python's
+      default functionality. For instance, there are packages specifically
+      designed to handle graphics, or play sounds, or perform highly complex
+      number-crunching functions. Here, we import a package called "barobo",
+      which is a package specially designed to manage and control Barobo robots,
+      including the Linkbot.
+    </para> <para>
+      Once a package is imported, you can access its contents by specifying
+      its name. For instance, consider the next three lines of code in the
+      sample program:
+      <programlisting>
+dongle = barobo.Dongle()
+dongle.connect()
+linkbot = dongle.getLinkbot('ABCD')
+      </programlisting>
+      These three lines are required to to get control of a Linkbot with the
+      serial ID "ABCD". Of course, if you decide to try and execute this code, 
+      you will probably want to change "ABCD" to the serial ID of your own
+      Linkbot. 
+    </para> 
+  </section>
+</chapter>
+
+<chapter>
+  <title> Meet PyScripter: A Python Integrated Development Environment (IDE) </title>
+</chapter>
+
+<chapter>
+  <title> How To Make Your Linkbot Beep and Boop </title>
+</chapter>
+
+<chapter>
+  <title> Non-Blocking Functions: Make your robot do multiple things at once </title>
+</chapter>
+
+<chapter>
+  <title> What's up, Bot? How to get data from your Linkbot </title>
 </chapter>
 
 </book>

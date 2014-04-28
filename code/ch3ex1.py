@@ -5,8 +5,8 @@
 
 import barobo
 
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-linkbot = ctx.getLinkbot()
+dongle = barobo.Dongle()
+dongle.connect()
+linkbot = dongle.getLinkbot()
 
 linkbot.setLEDColor(255, 0, 0)
