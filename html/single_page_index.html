@@ -1,7 +1,7 @@
 <html><head>
       <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
    <title>Programming the Barobo Linkbot with Python</title><link rel="stylesheet" type="text/css" href="barobostyle.css"><meta name="generator" content="DocBook XSL Stylesheets V1.76.1"><script src="js/vendor/linkbot.js"></script><script src="js/vendor/jquery-2.1.0.min.js"></script><script src="js/util.js"></script><script src="js/getURLParam.js"></script></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="book" title="Programming the Barobo Linkbot with Python"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>Programming the Barobo Linkbot with Python</h1></div><div><div class="author"><h3 class="author"><span class="firstname">David</span> <span class="surname">Ko</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Bryan</span> <span class="surname">Richter</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Harris</span> <span class="surname">Hancock</span></h3></div></div><div><div class="author"><h3 class="author"><span class="firstname">Mike</span> <span class="surname">Challender</span></h3></div></div><div><p class="copyright">Copyright &copy; 2014 Barobo, Inc. </p></div></div><hr></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="preface"><a href="#d5e23">Preface</a></span></dt><dt><span class="chapter"><a href="#d5e37">1.  Introduction </a></span></dt><dd><dl><dt><span class="section"><a href="#section:install"> Getting and Installing the Software </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e45"> Python </a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e81">2. Introduction to the Barobo Linkbot</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e89">Turning your Linkbot On and Off</a></span></dt><dt><span class="section"><a href="#d5e94">Linkbot Motor Zero Positions</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e96">Moving the Motors to Zero Positions</a></span></dt><dt><span class="section"><a href="#d5e100">Recalibrating the Linkbot Zero Positions</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="#d5e105">3. Introduction to Programming Linkbots with Python</a></span></dt><dd><dl><dt><span class="section"><a href="#d5e109"> Linkbot Driver's Ed
-    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e113"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e118"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e129"> Explore </a></span></dt><dt><span class="section"><a href="#d5e133"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e140"> Moving a Robot's Motors to Absolute Positions </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e143">4.  An Introduction to the Python Interpreter </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e149"> Starting an Interactive Python Interpreter </a></span></dt><dt><span class="section"><a href="#d5e162"> Python Variables </a></span></dt><dt><span class="section"><a href="#d5e189">Using the Python Interpreter as a Calculator</a></span></dt><dt><span class="section"><a href="#d5e209">Moving your Linkbot with the Python Interpreter</a></span></dt><dt><span class="section"><a href="#d5e212"> So, what about that Boilerplate Code? </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e225">5.  Meet PyScripter: A Python Integrated Development Environment (IDE) </a></span></dt><dt><span class="chapter"><a href="#d5e227">6.  How To Make Your Linkbot Beep and Boop </a></span></dt><dt><span class="chapter"><a href="#d5e229">7.  Non-Blocking Functions: Make your robot do multiple things at once </a></span></dt><dt><span class="chapter"><a href="#d5e231">8.  What's up, Bot? How to get data from your Linkbot </a></span></dt></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>1.4. <a href="#fig_install_contents"> PortablePython Install Contents</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>3.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt></dl></div>
+    </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e113"> Linkbot Driver's Ed: Part 1 </a></span></dt><dt><span class="section"><a href="#d5e118"> Linkbot Driver's Ed: Part 2 </a></span></dt><dt><span class="section"><a href="#d5e129"> Explore </a></span></dt><dt><span class="section"><a href="#d5e133"> Challenge </a></span></dt></dl></dd><dt><span class="section"><a href="#d5e140"> Moving a Robot's Motors to Absolute Positions </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e143">4.  An Introduction to the Python Interpreter </a></span></dt><dd><dl><dt><span class="section"><a href="#d5e149"> Starting an Interactive Python Interpreter </a></span></dt><dt><span class="section"><a href="#d5e162"> Python Variables </a></span></dt><dt><span class="section"><a href="#d5e189">Using the Python Interpreter as a Calculator</a></span></dt><dt><span class="section"><a href="#d5e209">Moving your Linkbot with the Python Interpreter</a></span></dt><dt><span class="section"><a href="#d5e214"> So, what about that Boilerplate Code? </a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e236">5.  Meet PyScripter: A Python Integrated Development Environment (IDE) </a></span></dt><dt><span class="chapter"><a href="#d5e238">6.  How To Make Your Linkbot Beep and Boop </a></span></dt><dt><span class="chapter"><a href="#d5e240">7.  Non-Blocking Functions: Make your robot do multiple things at once </a></span></dt><dt><span class="chapter"><a href="#d5e242">8.  What's up, Bot? How to get data from your Linkbot </a></span></dt></dl></div><div class="list-of-figures"><p><b>List of Figures</b></p><dl><dt>1.1. <a href="#fig_installwindows1"> Installing PortablePython - Barobo Edition, Step 1</a></dt><dt>1.2. <a href="#fig_installwindows2"> Installing PortablePython - Barobo Edition, Step 2</a></dt><dt>1.3. <a href="#fig_installwindows3"> Installing PortablePython - Barobo Edition, Step 3</a></dt><dt>1.4. <a href="#fig_install_contents"> PortablePython Install Contents</a></dt><dt>2.1. <a href="#fig_schematic">Linkbot Diagram and Features</a></dt><dt>3.1. <a href="#fig_right_hand_rule"> The right-hand rule. </a></dt></dl></div>
 
 
 <div class="preface" title="Preface"><div class="titlepage"><div><div><h2 class="title"><a name="d5e23"></a>Preface</h2></div></div></div>
@@ -511,7 +511,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
     though it is required for the program to run properly.
     </p>
   </div></div></div>
-<div class="chapter" title="Chapter&nbsp;4.&nbsp; An Introduction to the Python Interpreter"><div class="titlepage"><div><div><h2 class="title"><a name="d5e143"></a>Chapter&nbsp;4.&nbsp; An Introduction to the Python Interpreter </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e149"> Starting an Interactive Python Interpreter </a></span></dt><dt><span class="section"><a href="#d5e162"> Python Variables </a></span></dt><dt><span class="section"><a href="#d5e189">Using the Python Interpreter as a Calculator</a></span></dt><dt><span class="section"><a href="#d5e209">Moving your Linkbot with the Python Interpreter</a></span></dt><dt><span class="section"><a href="#d5e212"> So, what about that Boilerplate Code? </a></span></dt></dl></div>
+<div class="chapter" title="Chapter&nbsp;4.&nbsp; An Introduction to the Python Interpreter"><div class="titlepage"><div><div><h2 class="title"><a name="d5e143"></a>Chapter&nbsp;4.&nbsp; An Introduction to the Python Interpreter </h2></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="#d5e149"> Starting an Interactive Python Interpreter </a></span></dt><dt><span class="section"><a href="#d5e162"> Python Variables </a></span></dt><dt><span class="section"><a href="#d5e189">Using the Python Interpreter as a Calculator</a></span></dt><dt><span class="section"><a href="#d5e209">Moving your Linkbot with the Python Interpreter</a></span></dt><dt><span class="section"><a href="#d5e214"> So, what about that Boilerplate Code? </a></span></dt></dl></div> 
   
   <p>
     So far, up to this point, you have been relying on BaroboBrowser to run
@@ -559,7 +559,7 @@ Challenge Completion: <img class="checkBox" src="images/box.svg" width="75px">
       <sup>[<a name="d5e165" href="#ftn.d5e165" class="footnote">3</a>]</sup>
       variables, you simply come up with a name for your variable and give it a value. 
       Variable names can be just about anything but they have to start with a letter or the
-      underscore "_" character, and they can't same some special symbols in the name,
+      underscore "_" character, and they can't have some special symbols in the name,
       such as plus signs or minus signs. Otherwise, they can contain letters, numbers, 
       underscores. There is also a list of so-called "reserved keywords" that you 
       cannot use as variable names because they have special meaning to the Python interpreter.
@@ -647,16 +647,36 @@ In [5]:
   <div class="section" title="Moving your Linkbot with the Python Interpreter"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e209"></a>Moving your Linkbot with the Python Interpreter</h2></div></div></div>
     
     <p>
-    
+      Now, lets try moving the Linkbot using the interactive Python interpreter.
+      Type the following so that your terminal looks like the following screen.
+      If you mistype a line, don't worry; just type it again. Also, remember
+      to replace <code class="code">ABCD</code> on line 4 with the serial ID of your robot.
+      </p><pre class="screen"> 
+In [1]: import barobo
+
+In [2]: dongle = barobo.Dongle()
+
+In [3]: dongle.connect()
+
+In [4]: myLinkbot = dongle.getLinkbot('ABCD')
+
+In [5]: myLinkbot.move(90, 90, 90)
+
+In [6]: myLinkbot.move(90, 0, -90)
+
+In [7]:
+      </pre><p>
+      What did the robot do when you typed this code in? Lines 5 and 6 should
+      look familiar to you from the previous chapter, "Linkbot Driver's Ed". 
     </p>
   </div>
 
-  <div class="section" title="So, what about that Boilerplate Code?"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e212"></a> So, what about that Boilerplate Code? </h2></div></div></div>
+  <div class="section" title="So, what about that Boilerplate Code?"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e214"></a> So, what about that Boilerplate Code? </h2></div></div></div>
     
     <p>
       We mentioned at the beginning of last section that we were only
-      going to show you some abbreviated pieces of code to keep clear 
-      the functions that were important for moving motors. If you 
+      going to show you some abbreviated pieces of code.
+      If you 
       were curious, you may have expanded the code examples and looked
       at the whole unabridged Python code. What you saw was probably 
       something like this:
@@ -677,6 +697,9 @@ linkbot = dongle.getLinkbot('ABCD')
 linkbot.move(90, 90, 90)
  </pre>
     <p> 
+      You may recognize the last line of that piece of code from 
+      the previous chapter and the previous section. It
+      is the piece of code that actually makes the robot move. 
       Lets take a closer look at this code, one line at a time.
     </p>
     <p>
@@ -692,7 +715,7 @@ linkbot.move(90, 90, 90)
 # File: ch4simple.py
 # A simple and complete Python program that moves the motors on a Linkbot
       </pre><p>
-      Note that both this code and the first line of code begin with the '#'
+      Note that these lines and the first line of code begin with the '#'
       character. In programmer-speak, this character is usually referred to
       as a "pound-sign" or a "hash" character. This character has
       special meaning in Python. It tells the Python interpreter to ignore
@@ -705,7 +728,7 @@ linkbot.move(90, 90, 90)
       </p><pre class="programlisting">
 import barobo
       </pre><p>
-      This line tells Python to import a package. Python packages are code
+      The <code class="code">import</code> command tells Python to import a package. Python packages are code
       libraries written by people to perform tasks that are not part of Python's
       default functionality. For instance, there are packages specifically
       designed to handle graphics, or play sounds, or perform highly complex
@@ -714,13 +737,31 @@ import barobo
       including the Linkbot.
     </p> <p>
       Once a package is imported, you can access its contents by specifying
-      its name. For instance, consider the next three lines of code in the
+      its name. For instance, consider the next line of code in the
       sample program:
       </p><pre class="programlisting">
 dongle = barobo.Dongle()
+      </pre><p>
+      The code <code class="code">barobo.Dongle()</code> creates a Barobo Dongle object and
+      stores it inside the variable <code class="code">dongle</code> using the assignment
+      operator, "<code class="code">=</code>". This is a special type
+      of complex variable that is neither a number nor a string. The dongle object
+      has a list of its own functions that can be executed to perform tasks.
+      For instance, the next line,
+      </p><pre class="programlisting">
 dongle.connect()
+      </pre><p>
+      connects to your Barobo Dongle. (If you do not have a Barobo Dongle attached to
+      your computer when you execute this line, you might receive an error message)
+    </p> <p>
+      The next line,
+      </p><pre class="programlisting">
 linkbot = dongle.getLinkbot('ABCD')
       </pre><p>
+      tells the dongle object to find a Linkbot with the serial ID "ABCD" and
+      assign it to the variable "<code class="code">linkbot</code>".
+
+    </p> <p>
       These three lines are required to to get control of a Linkbot with the
       serial ID "ABCD". Of course, if you decide to try and execute this code, 
       you will probably want to change "ABCD" to the serial ID of your own
@@ -730,19 +771,19 @@ linkbot = dongle.getLinkbot('ABCD')
 <div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a id="ftn.d5e146" href="#d5e146" class="para">2</a>] </sup>With the
     correct pre-requisites installed, of course... </p></div><div class="footnote"><p><sup>[<a id="ftn.d5e165" href="#d5e165" class="para">3</a>] </sup> In Programmer-speak, creating variables is often called "Declaring" variables.</p></div></div></div>
 
-<div class="chapter" title="Chapter&nbsp;5.&nbsp; Meet PyScripter: A Python Integrated Development Environment (IDE)"><div class="titlepage"><div><div><h2 class="title"><a name="d5e225"></a>Chapter&nbsp;5.&nbsp; Meet PyScripter: A Python Integrated Development Environment (IDE) </h2></div></div></div>
+<div class="chapter" title="Chapter&nbsp;5.&nbsp; Meet PyScripter: A Python Integrated Development Environment (IDE)"><div class="titlepage"><div><div><h2 class="title"><a name="d5e236"></a>Chapter&nbsp;5.&nbsp; Meet PyScripter: A Python Integrated Development Environment (IDE) </h2></div></div></div>
   
 </div>
 
-<div class="chapter" title="Chapter&nbsp;6.&nbsp; How To Make Your Linkbot Beep and Boop"><div class="titlepage"><div><div><h2 class="title"><a name="d5e227"></a>Chapter&nbsp;6.&nbsp; How To Make Your Linkbot Beep and Boop </h2></div></div></div>
+<div class="chapter" title="Chapter&nbsp;6.&nbsp; How To Make Your Linkbot Beep and Boop"><div class="titlepage"><div><div><h2 class="title"><a name="d5e238"></a>Chapter&nbsp;6.&nbsp; How To Make Your Linkbot Beep and Boop </h2></div></div></div>
   
 </div>
 
-<div class="chapter" title="Chapter&nbsp;7.&nbsp; Non-Blocking Functions: Make your robot do multiple things at once"><div class="titlepage"><div><div><h2 class="title"><a name="d5e229"></a>Chapter&nbsp;7.&nbsp; Non-Blocking Functions: Make your robot do multiple things at once </h2></div></div></div>
+<div class="chapter" title="Chapter&nbsp;7.&nbsp; Non-Blocking Functions: Make your robot do multiple things at once"><div class="titlepage"><div><div><h2 class="title"><a name="d5e240"></a>Chapter&nbsp;7.&nbsp; Non-Blocking Functions: Make your robot do multiple things at once </h2></div></div></div>
   
 </div>
 
-<div class="chapter" title="Chapter&nbsp;8.&nbsp; What's up, Bot? How to get data from your Linkbot"><div class="titlepage"><div><div><h2 class="title"><a name="d5e231"></a>Chapter&nbsp;8.&nbsp; What's up, Bot? How to get data from your Linkbot </h2></div></div></div>
+<div class="chapter" title="Chapter&nbsp;8.&nbsp; What's up, Bot? How to get data from your Linkbot"><div class="titlepage"><div><div><h2 class="title"><a name="d5e242"></a>Chapter&nbsp;8.&nbsp; What's up, Bot? How to get data from your Linkbot </h2></div></div></div>
   
 </div>
 

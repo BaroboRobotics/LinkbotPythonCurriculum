@@ -860,7 +860,7 @@ print(myvar)
   -->
 
 </chapter>
-<chapter>
+<chapter> <!-- Chapter 5 -->
   <title> An Introduction to the Python Interpreter </title>
   <para>
     So far, up to this point, you have been relying on BaroboBrowser to run
@@ -917,7 +917,7 @@ print(myvar)
       <footnote><para> In Programmer-speak, creating variables is often called "Declaring" variables.</para></footnote>
       variables, you simply come up with a name for your variable and give it a value. 
       Variable names can be just about anything but they have to start with a letter or the
-      underscore "_" character, and they can't same some special symbols in the name,
+      underscore "_" character, and they can't have some special symbols in the name,
       such as plus signs or minus signs. Otherwise, they can contain letters, numbers, 
       underscores. There is also a list of so-called "reserved keywords" that you 
       cannot use as variable names because they have special meaning to the Python interpreter.
@@ -1019,9 +1019,25 @@ In [5]:
     <para>
       Now, lets try moving the Linkbot using the interactive Python interpreter.
       Type the following so that your terminal looks like the following screen.
-      If you mistype a line, don't worry; just type it again.
-      <screen> </screen>
+      If you mistype a line, don't worry; just type it again. Also, remember
+      to replace <code>ABCD</code> on line 4 with the serial ID of your robot.
+      <screen> 
+In [1]: import barobo
 
+In [2]: dongle = barobo.Dongle()
+
+In [3]: dongle.connect()
+
+In [4]: myLinkbot = dongle.getLinkbot('ABCD')
+
+In [5]: myLinkbot.move(90, 90, 90)
+
+In [6]: myLinkbot.move(90, 0, -90)
+
+In [7]:
+      </screen>
+      What did the robot do when you typed this code in? Lines 5 and 6 should
+      look familiar to you from the previous chapter, "Linkbot Driver's Ed". 
     </para>
   </section>
 
@@ -1029,14 +1045,17 @@ In [5]:
     <title> So, what about that Boilerplate Code? </title>
     <para>
       We mentioned at the beginning of last section that we were only
-      going to show you some abbreviated pieces of code to keep clear 
-      the functions that were important for moving motors. If you 
+      going to show you some abbreviated pieces of code.
+      If you 
       were curious, you may have expanded the code examples and looked
       at the whole unabridged Python code. What you saw was probably 
       something like this:
     </para>
     <programlisting> &ch4simple; </programlisting>
     <para> 
+      You may recognize the last line of that piece of code from 
+      the previous chapter and the previous section. It
+      is the piece of code that actually makes the robot move. 
       Lets take a closer look at this code, one line at a time.
     </para>
     <para>
@@ -1052,7 +1071,7 @@ In [5]:
 # File: ch4simple.py
 # A simple and complete Python program that moves the motors on a Linkbot
       </programlisting>
-      Note that both this code and the first line of code begin with the '#'
+      Note that these lines and the first line of code begin with the '#'
       character. In programmer-speak, this character is usually referred to
       as a "pound-sign" or a "hash" character. This character has
       special meaning in Python. It tells the Python interpreter to ignore
@@ -1065,7 +1084,7 @@ In [5]:
       <programlisting>
 import barobo
       </programlisting>
-      This line tells Python to import a package. Python packages are code
+      The <code>import</code> command tells Python to import a package. Python packages are code
       libraries written by people to perform tasks that are not part of Python's
       default functionality. For instance, there are packages specifically
       designed to handle graphics, or play sounds, or perform highly complex
@@ -1074,13 +1093,31 @@ import barobo
       including the Linkbot.
     </para> <para>
       Once a package is imported, you can access its contents by specifying
-      its name. For instance, consider the next three lines of code in the
+      its name. For instance, consider the next line of code in the
       sample program:
       <programlisting>
 dongle = barobo.Dongle()
+      </programlisting>
+      The code <code>barobo.Dongle()</code> creates a Barobo Dongle object and
+      stores it inside the variable <code>dongle</code> using the assignment
+      operator, "<code>=</code>". This is a special type
+      of complex variable that is neither a number nor a string. The dongle object
+      has a list of its own functions that can be executed to perform tasks.
+      For instance, the next line,
+      <programlisting>
 dongle.connect()
+      </programlisting>
+      connects to your Barobo Dongle. (If you do not have a Barobo Dongle attached to
+      your computer when you execute this line, you might receive an error message)
+    </para> <para>
+      The next line,
+      <programlisting>
 linkbot = dongle.getLinkbot('ABCD')
       </programlisting>
+      tells the dongle object to find a Linkbot with the serial ID "ABCD" and
+      assign it to the variable "<code>linkbot</code>".
+
+    </para> <para>
       These three lines are required to to get control of a Linkbot with the
       serial ID "ABCD". Of course, if you decide to try and execute this code, 
       you will probably want to change "ABCD" to the serial ID of your own
