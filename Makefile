@@ -32,7 +32,7 @@ saxon9:
 	/usr/bin/java -jar ~/.local/share/java/saxon9he.jar curriculum.docbook.xml mychunkstylesheet.xml
 
 saxon-chunk-hlh:
-	/usr/bin/java -cp "/usr/share/saxon-6.5/lib/saxon.jar:./xslthl.jar" \
+	/usr/bin/java -cp "/usr/share/saxon-6.5/lib/saxon.jar:/home/harris/Downloads/xslthl-2.1.0.jar" \
 		-Dxslthl.config="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/highlighting/xslthl-config.xml" \
 		-Dxslthl.config="file:///usr/share/sgml/docbook/xsl-stylesheets/highlighting/xslthl-config.xml" \
 		com.icl.saxon.StyleSheet \
