@@ -6,6 +6,7 @@
 <!ENTITY ch4simple SYSTEM "code/ch4simple.py">
 ]>
 <book version="5.0" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns = "http://docbook.org/ns/docbook">
 <info>
   <title>Programming the Barobo Linkbot with Python</title>
@@ -118,14 +119,14 @@
       This curriculum requires a fully functioning Python environment
       and a copy of Linkbot Labs. It is very likely you are already viewing
       this document using Linkbot Labs. If you are not, you may obtain
-      Linkbot Labs from http://www.barobo.com/downloads . 
+      Linkbot Labs from <link xlink:href="http://www.barobo.com/downloads"/>.
     </para> 
     <section> <title> Python </title>
       <section> <title> Windows </title>
         <para>
           To get Python up and running, we recommend downloading and installing
           our PortablePython Barobo Edition all-in-one installer at 
-          http://my.barobo.com/download/windows_python_allinone_installer .
+          <link xlink:href="http://my.barobo.com/download/windows_python_allinone_installer"/>.
         </para>
         <para>
           Once you have downloaded the file, double click on the installer to begin 
