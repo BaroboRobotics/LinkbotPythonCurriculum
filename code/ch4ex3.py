@@ -19,9 +19,9 @@ def blink(l):
         linkbot.setLEDColor(0, 0, 255)
         time.sleep(0.5)
 
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
-linkbot = ctx.getLinkbot()
+dongle = barobo.Dongle()
+dongle.connect()
+linkbot = dongle.getLinkbot()
 
 blink(linkbot)
 moveForward(linkbot, 180)

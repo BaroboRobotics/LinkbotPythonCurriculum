@@ -6,10 +6,10 @@
 # File: ch4ex2.py
 
 import barobo
-ctx = barobo.BaroboCtx()
-ctx.autoConnect()
+dongle = barobo.Dongle()
+dongle.connect()
 <span class="unknown-robot-id-comment"><br/># Change the robot ID shown below to the ID of your Linkbot.</span>
-robot = ctx.getLinkbot('<span class="robotID">ABCD</span>')
+robot = dongle.getLinkbot('<span class="robotID">ABCD</span>')
 robot.setJointSpeeds(90, 90, 90)
     </pre>
 

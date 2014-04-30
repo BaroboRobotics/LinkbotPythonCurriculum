@@ -82,7 +82,7 @@ div.reader-query {
   border-color:#888;
 }
 
-div.code-snippet {
+div.code-snippet, pre.programlisting {
   max-width:800px;
   border-radius: 6px;
   border:solid;
@@ -93,6 +93,16 @@ div.code-snippet {
   position: relative;
   box-shadow:5px 5px 5px #888888;
   background-color:#e0fefe;
+}
+
+pre.screen {
+	max-width:800px;
+	padding:5px;
+	padding-left:5px;
+        position: relative;
+	box-shadow:5px 5px 5px #888888;
+	background-color:#050505;
+  color:#AAA
 }
 
 a {
