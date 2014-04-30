@@ -235,7 +235,7 @@
   -->
 </chapter>
 
-<chapter> <title>Introduction to the Barobo Linkbot</title>
+<chapter> <title>The Barobo Linkbot</title>
   <para>
   This chapter will discuss how to operate your Linkbots, including 
   tasks such as turning your Linkbot on and off and recalibrating
@@ -523,7 +523,7 @@
 </chapter>
 -->
 
-<chapter> <title>Introduction to Programming Linkbots with Python</title>
+<chapter> <title>Programming Linkbots with Python</title>
   This chapter will help you start moving your Linkbot around. As you
   go through this section, you will see small snippets of code that
   moves the robot. If you choose, there is a link below each snippet
@@ -863,7 +863,7 @@ print(myvar)
 
 </chapter>
 <chapter> <!-- Chapter 5 -->
-  <title> An Introduction to the Python Interpreter </title>
+  <title> The Python Interpreter </title>
   <para>
     So far, up to this point, you have been relying on BaroboBrowser to run
     code snippet examples for you. Now it's time to graduate you to writing your
