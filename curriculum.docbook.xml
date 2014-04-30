@@ -1300,7 +1300,7 @@ print('Hello World!')
         </mediaobject>
       </para>
       <para>
-        And change the name of the file from "module1" to "helloworld.py" at the
+        ...and change the name of the file from "module1" to "helloworld.py" at the
         bottom of the screen. When you are done naming your file, click on
         the "Save" button to save your file. 
         <mediaobject>
@@ -1308,6 +1308,24 @@ print('Hello World!')
             <imagedata fileref="images/pyscripter/PyScripter9.png"/>
           </imageobject>
         </mediaobject>
+      </para>
+    </section>
+    <section> <title> Explore </title>
+      <para>
+        Now that you know the syntax of the <function>print()</function> function,
+        try modifying your program to print other things. Try multiple print commands,
+        and try playing with the indentation of the program. Try intentionally 
+        putting errors in your program (like leaving out a parentheses or a quote
+        mark) and see how PyScripter reacts when you try to run a broken program.
+      </para>
+    </section>
+    <section> <title> Challenge </title>
+      <para>
+        How would you write a line of code to print the following?
+        <screen>
+The quick brown fox jumped over the lazy dog.
+        </screen>
+        <?dbhtml-include href="html/ch5challenge1.html"?>
       </para>
     </section>
   </section> 
