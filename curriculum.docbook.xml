@@ -862,7 +862,7 @@ print(myvar)
   -->
 
 </chapter>
-<chapter> <!-- Chapter 5 -->
+<chapter id="chapter:ipython"> <!-- Chapter 5 -->
   <title> An Introduction to the Python Interpreter </title>
   <para>
     So far, up to this point, you have been relying on BaroboBrowser to run
@@ -881,7 +881,7 @@ print(myvar)
     written in the file. To familiarize you with this process, lets begin
     by playing with the Python interpreter.
   </para>
-  <section> <title> Starting an Interactive Python Interpreter </title>
+  <section id="section:start_ipython"> <title> Starting an Interactive Python Interpreter </title>
     The first step is starting an interactive Python interpreter. First,
     navigate to where you installed the Python software, as detailed
     in <xref linkend="section:install"/>. Open the folder, and you should
@@ -1130,6 +1130,187 @@ linkbot = dongle.getLinkbot('ABCD')
 
 <chapter>
   <title> Meet PyScripter: A Python Integrated Development Environment (IDE) </title>
+  <para>
+    By now, you should be somewhat familiar with how some simple Python code looks.
+    Hopefully, you've played around with the interactive interpreter enough to realize
+    that although it is convenient, you can't really write large programs in it.
+  </para>
+  <para>
+    This is where Interactive Development Environments (IDEs) come in. An IDE is 
+    basically a complex text editor specifically designed to write and edit 
+    computer programs. They typically also include tools that can be used to 
+    check code, navigate through code libraries, and even pause in the middle
+    of programs for debugging purposes. Some popular IDEs you may have heard of
+    include "Microsoft Visual Studio" and "Eclipse IDE". In this chapter, we
+    will introduce you to an IDE called PyScripter. We chose PyScripter because
+    it is fast, easy to get started with, and still contains all of the major features 
+    of other, bigger IDEs. 
+  </para>
+
+  <section> <title> Start PyScripter</title>
+    <para>
+      First of all, lets start up PyScripter. Open up your PortablePython
+      folder, as detailed in <xref linkend="section:start_ipython"/>. 
+      In the folder, you will see a program called "PyScripter-Portable".
+      Go ahead and double-click on that. You should see a window similar to
+      the following image pop up on your screen.
+    </para>
+    <para>
+      <figure xml:id="fig:pyscripter_window">
+      <title> PyScripter default opening window </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/pyscripter/PyScripter1.png"/>
+        </imageobject>
+      </mediaobject>
+      </figure>
+    </para>
+    <para>
+      This is your basic PyScripter IDE interface. As you can see, there are
+      several major components to the window. Along the top, there is a toolbar
+      containing small icon buttons to commonly used operations. 
+    </para> <para> 
+      Along the left
+      side, there is a file browser for browsing files on your computer. If
+      you notice, on the bottom of the file browser are a few tabs labeled
+      "File...", "Proj...", and "Cod..." . You can select each tab depending
+      on whether or not you want to use the File Explorer, Project Explorer, or
+      Code Explorer, respectively. For now, just leave it on the File Explorer.
+    </para> <para>
+      On the bottom of the screen, there is a big pane called "Python Interpreter".
+      This is where all of the input and output of your Python programs will appear.
+      Furthermore, you can also use this interactive interpreter in a similar manner
+      in which you used iPython in <xref linkend="chapter:ipython"/>.
+    </para>
+  </section>
+
+  <section> <title> Hello World! </title>
+    <para>
+      Creating a "Hello World!" program is a time-honored tradition among
+      computer scientists. The "Hello World!" program is a small program
+      that does nothing but print "Hello World!" onto the screen. Lets
+      write one now.
+    </para>
+    <section> <title> Modify the default program contents </title>
+      <para>
+        As you saw when PyScripter first started up as shown in 
+        <xref linkend="fig:pyscripter_window"/>, there is some default template
+        code already on the screen. The format of the template code is 
+        ever-so-slightly too complex for us right now, so lets just delete it all.
+        Press <code> (CTRL-A) </code> to select all of the code and then hit the
+        Backspace key to wipe everything away. Then, either copy/paste or type
+        the following line of code into the PyScripter window.
+        <programlisting>
+print('Hello World!')
+        </programlisting>
+        Your PyScripter window should now look like this:
+      </para>
+      <para>
+        <figure xml:id="fig:pyscripter_hello">
+        <title> PyScripter default opening window </title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter2.png"/>
+          </imageobject>
+        </mediaobject>
+        </figure>
+      </para>
+    </section>
+    <section> <title> Run the "Hello World!" Program </title>
+      <para>
+        Now, lets try running the program. Click on the "Run File" icon 
+        <guiicon>
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/pyscripter/PyScripter_run_icon.png"/>
+            </imageobject>
+          </inlinemediaobject>
+        </guiicon>
+        located in the toolbar at the top of the PyScripter window.
+        Pay attention to Python Interpreter pane at the bottom of the PyScripter
+        window as you click on the "Run File" button. Your window should now
+        look something like this:
+      </para>
+      <para>
+        <figure xml:id="fig:pyscripter_hello_run">
+        <title> PyScripter running "Hello World!" program</title>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter3.png"/>
+          </imageobject>
+        </mediaobject>
+        </figure>
+      </para>
+      <para>
+        Congratulations! You have just written and executed the "Hello World!"
+        program in Python!
+      </para>
+    </section>
+    <section> <title> Save your new program to a file</title>
+      <para>
+        Now that you have a working program, lets save it to a file. Click on
+        "File->Save As" to save it to a new file. You should see the following screen:
+      </para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter4.png"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para>
+        As you can see, the default location PyScripter wants to save your files
+        is in "Libraries/Documents". You can select a different location to save 
+        your files if you wish, but this is a decent location. However, lets
+        make a new folder first so that we can keep our Python programs from
+        creating too much clutter. Click on the "New Folder" button at the top
+        of the window.
+      </para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter5.png"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para>
+        Lets name the new folder "My Python Projects".
+      </para>
+      <para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter6.png"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para>
+        Press "Enter" to create the folder...
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter7.png"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para>
+        Double-click on the new folder to go inside of it...
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter8.png"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+      <para>
+        And change the name of the file from "module1" to "helloworld.py" at the
+        bottom of the screen. When you are done naming your file, click on
+        the "Save" button to save your file. 
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="images/pyscripter/PyScripter9.png"/>
+          </imageobject>
+        </mediaobject>
+      </para>
+    </section>
+  </section> 
 </chapter>
 
 <chapter>
