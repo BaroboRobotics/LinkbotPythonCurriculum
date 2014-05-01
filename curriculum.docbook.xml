@@ -2,6 +2,7 @@
 <!DOCTYPE book [
 <!ENTITY LinkbotI "Linkbot&#x2011;I">
 <!ENTITY LinkbotL "Linkbot&#x2011;L">
+<!ENTITY EmDash "&#x2014;">
 <!ENTITY ch3ex1 SYSTEM "code/ch3ex1.py">
 <!ENTITY ch4simple SYSTEM "code/ch4simple.py">
 ]>
@@ -1134,6 +1135,53 @@ linkbot = dongle.getLinkbot('ABCD')
 
 <chapter>
   <title> How To Make Your Linkbot Beep and Boop </title>
+  <section>
+    <title> Frequency and Pitch </title>
+    <para>
+      The Linkbot possesses a simple buzzer which we can use to make music.
+      You've heard the buzzer make beeps before&EmDash;when the Linkbot boots
+      up it plays a short, two-note phrase to let you know that it's awake.
+    </para>
+    <para>
+      Fundamentally, these notes are not expressed as the musical pitches you
+      might be familiar with&EmDash;A#, G, middle C, etc., or the Do-Re-Mi
+      scale&EmDash;but rather as frequencies. A note's frequency is a physical
+      property, while its pitch, be it "high" or "low", is our brains' perception of
+      that frequency. The frequencies themselves oscillate too quickly for us
+      to recognize the individual periods. For example, if we were to visualize
+      the note middle C as a frequency, only a tenth of a second of it would
+      look like this:
+    </para>
+    <figure id="fig_frequency_of_middle_c">
+      <title> Middle C </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/frequency_of_middle_c.png"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
+    <para>
+      Since we cannot see sound frequencies directly, we use pictures like the
+      one above, called waveforms, to visualize them. The spikes at the top
+      are called crests and the spikes at the bottom are called troughs.
+      If you count the number of crests or troughs, you will notice that there
+      are 26. Since we're only looking at one tenth of one second's worth of
+      the waveform, we need to multiply by ten to get the number of crests or
+      troughs in a full second: 260. This is close to the actual frequency in
+      Hertz of middle C: 261.6 Hz. The slight error (1.6) can be explained by
+      the partial crest visible at the right end of the waveform.
+    </para>
+    <para>
+      Imagine hearing 261 clicks in a single second! You wouldn't be able to
+      tell them apart&EmDash;they would blur into one continuous sound, and
+      your brain would assign a pitch to that sound. The name of that pitch
+      would be middle C, or C<subscript>4</subscript> in scientific pitch
+      notation, which we will introduce soon.
+    </para>
+  </section>
+  <section>
+    <title> Less Talk, More Music </title>
+  </section>
 </chapter>
 
 <chapter>
