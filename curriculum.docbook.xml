@@ -1144,7 +1144,7 @@ linkbot = dongle.getLinkbot('ABCD')
     </para>
     <para>
       Fundamentally, these notes are not expressed as the musical pitches you
-      might be familiar with&EmDash;A#, G, middle C, etc., or the Do-Re-Mi
+      might be familiar with&EmDash;A♯, G, middle C, etc., or the Do-Re-Mi
       scale&EmDash;but rather as frequencies. A note's frequency is a physical
       property, while its pitch, be it "high" or "low", is our brains' perception of
       that frequency. The frequencies themselves oscillate too quickly for us
@@ -1156,6 +1156,12 @@ linkbot = dongle.getLinkbot('ABCD')
       <title> Middle C </title>
       <mediaobject>
         <imageobject>
+          <!-- hlh: made in Inkscape with
+               Extensions -> Render -> Function Plotter
+               f(x) = sin(26.16*x)
+               x range: 2*pi*(0 <= x < 1)
+               y range: -1 <= y < 1
+            -->
           <imagedata fileref="images/frequency_of_middle_c.png"/>
         </imageobject>
       </mediaobject>
@@ -1178,9 +1184,19 @@ linkbot = dongle.getLinkbot('ABCD')
       would be middle C, or C<subscript>4</subscript> in scientific pitch
       notation, which we will introduce soon.
     </para>
-  </section>
-  <section>
-    <title> Less Talk, More Music </title>
+    <para>
+      Here are a few notes and their corresponding frequencies in Hertz. We'll
+      be using them in the next section to make a familiar tune.
+    </para>
+    <figure id="fig_some_notes_and_their_frequencies">
+      <title> Some Notes and Their Frequencies </title>
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="images/some_notes_and_their_frequencies.png"
+            width="700px"/>
+        </imageobject>
+      </mediaobject>
+    </figure>
   </section>
 </chapter>
 
