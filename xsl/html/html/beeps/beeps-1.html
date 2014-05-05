@@ -1,0 +1,33 @@
+<div id="beeps-1">
+    <div id="piano-keys"></div>
+    <div class="code-snippet">
+        <pre class="hidden">
+#!/usr/bin/env python
+# File: ch4ex3.py
+
+import barobo
+dongle = barobo.Dongle()
+dongle.connect()
+<span class="unknown-robot-id-comment"><br/># Change the robot ID shown below to the ID of your Linkbot.</span>
+robot = dongle.getLinkbot('<span class="robotID">ABCD</span>')
+        </pre>
+
+        <pre>
+robot.setBuzzerFrequency(<input type="text" size="5" value="440.0" id="frequency"/>)
+sleep(0.5)
+robot.setBuzzerFrequency(0)
+        </pre>
+
+        <div class="hider-tab">
+            <a class="expand-program" href="#">
+                <img src="images/double-chevron-down.svg" width="20px" height="20px" alt="Show/hide unabridged code" title="Show/hide unabridged code"/>
+            </a>
+        </div>
+    </div>
+
+    <br/>
+
+    <button type="button" class="tryNow" > Try Now </button>
+
+    <script src="js/beeps/beeps-1.js"></script>
+</div>

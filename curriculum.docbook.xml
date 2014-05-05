@@ -1198,6 +1198,13 @@ linkbot = dongle.getLinkbot('ABCD')
       </mediaobject>
     </figure>
   </section>
+  <section>
+    <title>Pianobot</title>
+    <para>
+      Hello, world!
+      <?dbhtml-include href="html/beeps/beeps-1.html"?> 
+    </para>
+  </section>
 </chapter>
 
 <chapter>
