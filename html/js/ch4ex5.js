@@ -2,16 +2,9 @@ $( function() {
 
 var thisExercise = $('.ch4ex5');
 
-var robotID = GetRobotId();
-if(robotID == undefined) {
-  robotID = 'ABCD';
-}
-else {
-  $('.unknown-robot-id-comment', thisExercise).text('');
-  AddRobotToGetParams(robotID);
-}
+var bot = staticRobot(function () {$('.unknown-robot-id-comment', thisExercise).text('');});
 
-$('.robotID', thisExercise).text(robotID);
+$('.robotID', thisExercise).text(bot._id);
 
 var j1text = '0';
 var j3text = '0';
@@ -25,12 +18,10 @@ $('.tryNow', thisExercise).click( function(obj) {
 	} else {
 		$('.checkBox', thisExercise).attr("src", "images/cross.svg");
 	}
-	var bot = Linkbots.connect(robotID);
 	bot.move(j1, j2, j3);
 });
 
 $('.stop', thisExercise).click( function(obj) {
-	var bot = Linkbots.connect(robotID);
 	bot.stop();
 });
 

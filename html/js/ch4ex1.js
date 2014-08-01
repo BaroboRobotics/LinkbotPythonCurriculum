@@ -1,22 +1,10 @@
 $( function() {
 
-RepopulateManager();
 var thisExercise = $('.ch4ex1');
 
-var bot = Linkbots.acquire(1).robots[0];
-var robotID;
-if (typeof bot !== "undefined") {
-  robotID = bot._id;
-}
-if(robotID == "undefined") {
-  robotID = 'ABCD';
-}
-else {
-  $('.unknown-robot-id-comment', thisExercise).text('');
-  AddRobotToGetParams(robotID);
-}
+var bot = staticRobot(function () {$('.unknown-robot-id-comment', thisExercise).text('');});
 
-$('.robotID', thisExercise).text(robotID);
+$('.robotID', thisExercise).text(bot._id);
 
 $('.tryNow', thisExercise).click( function(obj) {
   bot.move(360, 0, 0);
