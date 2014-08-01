@@ -1,9 +1,14 @@
 $( function() {
 
+RepopulateManager();
 var thisExercise = $('.ch4ex1');
 
-var robotID = GetRobotId();
-if(robotID == undefined) {
+var bot = Linkbots.acquire(1).robots[0];
+var robotID;
+if (typeof bot !== "undefined") {
+  robotID = bot._id;
+}
+if(robotID == "undefined") {
   robotID = 'ABCD';
 }
 else {
@@ -14,7 +19,6 @@ else {
 $('.robotID', thisExercise).text(robotID);
 
 $('.tryNow', thisExercise).click( function(obj) {
-  var bot = Linkbots.connect(robotID);
   bot.move(360, 0, 0);
 });
 

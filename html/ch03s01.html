@@ -24,7 +24,6 @@ The ID is printed on the Linkbot and is four characters long.
 <script>
 
 $(function () {
-document.body.appendChild(Linkbots.managerElement());
 
 var setConnected = function (robot) {
   window.ch4_RobotID = robot._id;
@@ -40,9 +39,7 @@ var existingId = GetURLParameter("robotID");
 
 if (typeof existingId !== "undefined") {
   $('.ch4intro .linkbotId').val(existingId);
-  Linkbots.managerAdd(existingId);
-  Linkbots.managerConnect();
-  Linkbots.managerRedraw();
+  RepopulateManager();
   acq = Linkbots.acquire(1);
   if (acq.robots.length == 1) {
     setConnected(acq.robots[0]);

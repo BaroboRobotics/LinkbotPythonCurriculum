@@ -28,9 +28,7 @@ var existingId = GetURLParameter("robotID");
 
 if (typeof existingId !== "undefined") {
   $('.ch4intro .linkbotId').val(existingId);
-  Linkbots.managerAdd(existingId);
-  Linkbots.managerConnect();
-  Linkbots.managerRedraw();
+  RepopulateManager();
   acq = Linkbots.acquire(1);
   if (acq.robots.length == 1) {
     setConnected(acq.robots[0]);

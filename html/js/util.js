@@ -24,6 +24,14 @@ function AddRobotToGetParams(robotId)
       });
 }
 
+function RepopulateManager() {
+    var existingId = GetURLParameter("robotID");
+    if (typeof existingId !== "undefined") {
+        Linkbots.managerAdd(existingId);
+        Linkbots.managerConnect();
+        Linkbots.managerRedraw();
+    }
+}
 $( function() {
     document.body.appendChild(Linkbots.managerElement());
     $('.book').attr('title', '');
