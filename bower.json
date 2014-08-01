@@ -4,15 +4,12 @@
   "authors": [
     "Barobo Inc."
   ],
-  "main": "html/wat",
+  "main": "html/index.html",
   "license": "MIT",
   "private": true,
   "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "**/*",
+    "!html/**/*"
   ],
   "devDependencies": {
     "linkbotjs": "BaroboRobotics/LinkbotJS#develop"
