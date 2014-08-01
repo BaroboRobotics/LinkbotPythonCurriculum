@@ -25,6 +25,7 @@ function AddRobotToGetParams(robotId)
 }
 
 $( function() {
+    document.body.appendChild(Linkbots.managerElement());
     $('.book').attr('title', '');
 
     // Add a LinkbotLabs icon on the left side that sticks no matter where you scroll
