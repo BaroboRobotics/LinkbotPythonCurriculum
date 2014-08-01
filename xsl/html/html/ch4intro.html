@@ -1,14 +1,14 @@
 <div class="ch4intro">
 <div class="reader-query">
 This section will use a Linkbot-I to demonstrate code snippets.
-Enter the ID of a Linkbot-I that you would like to use for this chapter: 
-<input name="linkbotId" class="linkbotId" placeholder="ABCD" type="text" size="4"/>
-<button id="setRobotID"> Connect to Robot </button>
+Enter the ID of a Linkbot-I that you would like to use into the Robot
+Manager, then click here:
+<button id="setRobotID"> Connect </button>
+<input name="linkbotId" disabled="1" class="linkbotId" type="text" size="4"/>
 <br/>
 <span id="connectStatus"> </span>
 <br/>
-The ID is printed
-on the Linkbot and is four characters long. 
+The ID is printed on the Linkbot and is four characters long.
 
 <script>
 
@@ -21,20 +21,27 @@ var setConnected = function (robot) {
   $('#setRobotID').text('Connected!').attr("style", "background-color:lightgreen");
   robot.color(0, 255, 0);
   AddRobotToGetParams(robot._id);
+  $("input[name=linkbotId]").val(robot._id);
 };
 
 var existingId = GetURLParameter("robotID");
 
 if (typeof existingId !== "undefined") {
   $('.ch4intro .linkbotId').val(existingId);
-  setConnected(Linkbots.connect(existingId));
+  RepopulateManager();
+  acq = Linkbots.acquire(1);
+  if (acq.robots.length == 1) {
+    setConnected(acq.robots[0]);
+  }
 }
 $('#setRobotID').click( function(obj) {
   var linkbotId =  $('.ch4intro').find('.linkbotId').val(); 
-  try {
-    var bot = Linkbots.connect(linkbotId);
-  } catch (err) {
-    $('#connectStatus').text('Connection Failed').attr("style", "color:red;font-weight:bold");
+  var acq = Linkbots.acquire(1);
+  var bot;
+  if (acq.robots.length == 1) {
+    bot = acq.robots[0];
+  } else {
+    $('#connectStatus').text('Connection failed. Are there robots in the Robot Manager?').attr("style", "color:red;font-weight:bold");
     return;
   }
   setConnected(bot);

@@ -2,22 +2,14 @@ $( function() {
 
 var thisExercise = $('.ch4ex3');
 
-var robotID = GetRobotId();
-if(robotID == undefined) {
-  robotID = 'ABCD';
-}
-else {
-  $('.unknown-robot-id-comment', thisExercise).text('');
-  AddRobotToGetParams(robotID);
-}
+var bot = staticRobot(function () {$('.unknown-robot-id-comment', thisExercise).text('');});
 
-$('.robotID', thisExercise).text(robotID);
+$('.robotID', thisExercise).text(bot._id);
 
 var j1text = '0';
 var j3text = '0';
 
 $('.tryNow', thisExercise).click( function(obj) {
-	var bot = Linkbots.connect(robotID);
 	var j1 = parseFloat(j1text);
 	var j2 = 0;
 	var j3 = parseFloat(j3text);
@@ -25,7 +17,6 @@ $('.tryNow', thisExercise).click( function(obj) {
 });
 
 $('.stop', thisExercise).click( function(obj) {
-	var bot = Linkbots.connect(robotID);
 	bot.stop();
 });
 

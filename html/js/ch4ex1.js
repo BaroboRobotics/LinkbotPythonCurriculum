@@ -2,19 +2,11 @@ $( function() {
 
 var thisExercise = $('.ch4ex1');
 
-var robotID = GetRobotId();
-if(robotID == undefined) {
-  robotID = 'ABCD';
-}
-else {
-  $('.unknown-robot-id-comment', thisExercise).text('');
-  AddRobotToGetParams(robotID);
-}
+var bot = staticRobot(function () {$('.unknown-robot-id-comment', thisExercise).text('');});
 
-$('.robotID', thisExercise).text(robotID);
+$('.robotID', thisExercise).text(bot._id);
 
 $('.tryNow', thisExercise).click( function(obj) {
-  var bot = Linkbots.connect(robotID);
   bot.move(360, 0, 0);
 });
 

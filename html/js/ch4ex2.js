@@ -1,20 +1,12 @@
 $( function() {
 
 var thisExercise = $('.ch4ex2');
-    
-var robotID = GetRobotId();
-if(robotID == undefined) {
-  robotID = 'ABCD';
-}
-else {
-  $('.unknown-robot-id-comment', thisExercise).text('');
-  AddRobotToGetParams(robotID);
-}
 
-$('.robotID', thisExercise).text(robotID);
+var bot = staticRobot(function () {$('.unknown-robot-id-comment', thisExercise).text('');});
+
+$('.robotID', thisExercise).text(bot._id);
 
 $('.tryNow', thisExercise).click( function(obj) {
-    var bot = Linkbots.connect(robotID);
     bot.move(0, 0, -360);
 });
 

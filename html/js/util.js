@@ -24,7 +24,35 @@ function AddRobotToGetParams(robotId)
       });
 }
 
+function RepopulateManager() {
+    var existingId = GetURLParameter("robotID");
+    if (typeof existingId !== "undefined") {
+        Linkbots.managerAdd(existingId);
+        Linkbots.managerConnect();
+        Linkbots.managerRedraw();
+    }
+}
+
+var staticRobot = (function () {
+  var bot;
+  return function (goodRobotCallback) {
+    if (typeof bot === "undefined") {
+      RepopulateManager();
+      bot = Linkbots.acquire(1).robots[0];
+      if (typeof bot === "undefined") {
+        bot = { _id: "ABCD" };
+      }
+      else {
+        goodRobotCallback();
+        AddRobotToGetParams(bot._id);
+      }
+    }
+    return bot;
+  };
+}());
+
 $( function() {
+    document.body.appendChild(Linkbots.managerElement());
     $('.book').attr('title', '');
 
     // Add a LinkbotLabs icon on the left side that sticks no matter where you scroll
