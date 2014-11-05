@@ -4,6 +4,7 @@
   "authors": [
     "Barobo Inc."
   ],
+  "directory":"html/components/",
   "main": "html/index.html",
   "license": "MIT",
   "private": true,
